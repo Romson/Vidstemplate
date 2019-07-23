@@ -1,4 +1,4 @@
-# youtube-api
+# VidsTemplate
 
 ## Project setup
 ```
