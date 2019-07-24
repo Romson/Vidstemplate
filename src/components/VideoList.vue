@@ -6,7 +6,9 @@
 
 <script>
 export default {
-    name: 'VideoList'
+    name: 'VideoList',
+    
+    props: ['videosToShow']
 };
 </script>
 

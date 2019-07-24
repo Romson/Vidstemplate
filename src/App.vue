@@ -1,8 +1,14 @@
 <template>
     <div>
+        <!-- v-on: for $emit event. Shorthand syntax @ -->
         <SearchBar @termChange="onTermChange"></SearchBar>
-        <VideoList></VideoList>
-        {{ videos.length }}
+
+        <!-- props => parent to child -->
+        <!-- v-bind: for rerendering of child component whenever videos is updated. Shorthand syntax : -->
+        <!-- (:videosToShow) name of the prop we want to show/use inside the child. -->
+        <!-- ("videos") name of the prop inside the parent that we want to share -->
+        <VideoList :videosToShow="videos"></VideoList>
+
     </div>
 </template>
 
@@ -12,7 +18,7 @@ import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
 
 
-const API_KEY = '******************************';
+const API_KEY = '************************';
 
 export default {
     name: 'App',
@@ -21,6 +27,7 @@ export default {
         VideoList
     },
     data: function() {
+        // data to rerender when prop (videos) is updated
         return { videos: [] };
     },
     methods: {
