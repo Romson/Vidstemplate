@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- v-on: for $emit event. Shorthand syntax @ -->
         <input @input="onInput" />
     </div>
 </template>
