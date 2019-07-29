@@ -1,6 +1,9 @@
 <template>
   <ul>
-    <VideoListItem v-for="myVideo in videosToShow" v-bind:video="myVideo"></VideoListItem>
+    <!-- v-for -> for every "item" in "videosToShow" array, make 1 video component -->
+    <!-- v-bind -> "video", name of the prop we want to show/use inside the child.  : -->
+    v-bind -> "key",
+    <VideoListItem v-for="item in videosToShow" :video="item" :key="item.etag"></VideoListItem>
   </ul>
 </template>
 
