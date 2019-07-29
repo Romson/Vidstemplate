@@ -16,7 +16,7 @@ import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 
-const API_KEY = "****************";
+const API_KEY = "****************************";
 
 export default {
   name: "App",
@@ -41,6 +41,7 @@ export default {
         })
         .then(response => {
           this.videos = response.data.items;
+          console.log(response);
         });
     }
   }
