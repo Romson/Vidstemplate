@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="list-group">
     <!-- v-for -> for every "item" in "videosToShow" array, make 1 video component -->
     <!-- v-bind -> "video", name of the prop we want to show/use inside the child.  : -->
     <!-- v-bind -> "key", is used whenever our list is updated. Enhances the performance of rerendering our list of items. -->

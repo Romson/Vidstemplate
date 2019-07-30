@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <!-- v-on: for $emit event. Shorthand syntax @ -->
     <SearchBar @termChange="onTermChange"></SearchBar>
 
