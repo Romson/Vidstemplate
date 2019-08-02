@@ -1,7 +1,9 @@
 <template>
-  <li class="list-group-item">
-    <img :src="thumbnailUrl" />
-    {{ video.snippet.title }}
+  <li class="list-group-item media">
+    <img class="mr-3" :src="thumbnailURL" />
+    <div class="media-body">
+      {{ videoTitle }}
+    </div>
   </li>
 </template>
 
@@ -10,9 +12,24 @@ export default {
   name: "VideoListItem",
   props: ["video"],
   computed: {
-    thumbnailUrl() {
+    videoTitle() {
+      return this.video.snippet.title;
+    },
+    thumbnailURL() {
+      // Refernce this."propname"
       return this.video.snippet.thumbnails.default.url;
     }
   }
 };
 </script>
+
+<style lang="scss">
+  li {
+    display: flex;
+    cursor: pointer;
+    &:hover {
+      background: #eee;
+    }
+  }
+</style>
+
