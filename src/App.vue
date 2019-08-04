@@ -5,9 +5,9 @@
 
     <!-- props => parent to child -->
     <!-- v-bind: for rerendering of child component whenever videos is updated. Shorthand syntax : -->
-    <!-- (:videosToShow) name of the prop we want to show/use inside the child. -->
+    <!-- (:videosToShow) name of the prop we want to show/use inside the child: <VideoList> -->
     <!-- ("videos") name of the prop inside the parent that we want to share -->
-    <VideoList :videosToShow="videos"></VideoList>
+    <VideoList :videosToShow="videos" @videoSelected="onVideoSelected"></VideoList>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 
-const API_KEY = "AIzaSyBDmgdtzAL9vEky1W1ojWdXqOPTJ524jPU";
+const API_KEY = "****************************";
 
 export default {
   name: "App",
@@ -29,7 +29,10 @@ export default {
     return { videos: [] };
   },
   methods: {
-    onTermChange: function(searchTerm) {
+    onVideoSelected(video) {
+      console.log(video);
+    },
+    onTermChange(searchTerm) {
       axios
         .get("https://www.googleapis.com/youtube/v3/search", {
           params: {
